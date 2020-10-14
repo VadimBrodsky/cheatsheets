@@ -244,4 +244,40 @@ def increment_with_types(number: int, by: int = 1) -> tuple:
     return (number, number + by)
 
 
-increment_with_types(2, 4 )            # >>> 6
+increment_with_types(2, 4)             # >>> 6
+
+
+# the * packages the arguments into a tuple
+def multiply(*list):
+    total = 1
+    for number in list:
+        total *= number
+    return total
+
+
+multiply(2, 3, 4, 5)                   # >>> 120
+
+
+# the ** packaged multiple keyword arguments into a dictionary
+def save_user(**user):
+    print(user['id'])
+    print(user['name'])
+
+
+save_user(id=1, name='admin')
+
+
+# Scope
+# Python has function scope, but not block scope
+# Local variables can shadow global variables
+# By default funciton variables are scoped to that function uneless global
+###############################################################################
+
+
+message = 'Hello'                      # globally scoped variable
+
+def greet():
+    global message                     # use the global varialbe
+    print(message)                     # has access to global scope
+    message = 'Goodbye'                # overrides the global
+    print(message)                     # >>> 'Goodbye'
