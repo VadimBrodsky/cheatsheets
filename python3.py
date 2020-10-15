@@ -281,3 +281,27 @@ def greet():
     print(message)                     # has access to global scope
     message = 'Goodbye'                # overrides the global
     print(message)                     # >>> 'Goodbye'
+
+
+# Lists
+# array of objects of any type
+###############################################################################
+
+
+['a', 'b', 'c']                        # list of letters
+[[0, 1], [2, 3]]                       # matrix
+[0] * 100                              # creates a list with 100 zeros
+['a', 'b'] + [0, 0, 0]                 # list concatenation
+
+list(range(20))                        # convert any iterable to a list
+list('hello world')                    # strings are iterable
+
+len(list('hello world'))               # >>> 11
+
+letters = ['a', 'b', 'c', 'd']
+print(letters[0])                      # >>> 'a'
+print(letters[-1])                     # >>> 'd'
+letters[0] = 'A'                       # modify the list items via assingment
+letters[0:3]                           # >>> ['A', 'b', 'c'] sliced copy
+letters[:]                             # copy of the orignal list
+letters[::2]                           # >>> ['a', 'c'] every second element
